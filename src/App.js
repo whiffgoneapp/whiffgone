@@ -1,4 +1,4 @@
-// App.js
+// src/App.js
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
@@ -7,7 +7,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Products from "./pages/Products";
 import Cart from "./pages/Cart";
-import Success from "./pages/Success"; // Success sayfası import edildi
+import Success from "./pages/Success";
 
 function App() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -26,7 +26,7 @@ function App() {
   };
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/whiffgone">
       <Navbar currentUser={currentUser} onLogout={handleLogout} cart={cart} />
       <Routes>
         <Route path="/" element={<Home currentUser={currentUser} />} />
@@ -51,6 +51,11 @@ function App() {
 }
 
 export default App;
+
+
+
+
+
 
 
 
