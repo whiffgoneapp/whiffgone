@@ -1,3 +1,4 @@
+// src/pages/Waitlist.js
 import React, { useState, useEffect } from "react";
 import "./Waitlist.css";
 
@@ -13,19 +14,22 @@ const Waitlist = ({ onClose }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    fetch(
+    await fetch(
       "https://script.google.com/macros/s/AKfycbyXoUiuyK34yXn7dqpAJlMkFBsPXw51fpaEBpRwaeqmwNuTEcsK-zKroVCZ8iah6vI/exec",
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        mode: "no-cors", // ❗️ Mutlaka olmalı!
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify(formData),
       }
-    )
-      .then(() => setSubmitted(true))
-      .catch((err) => console.error(err));
+    );
+
+    setSubmitted(true);
   };
 
   useEffect(() => {
@@ -88,6 +92,7 @@ const Waitlist = ({ onClose }) => {
 };
 
 export default Waitlist;
+
 
 
 
