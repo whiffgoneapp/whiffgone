@@ -1,3 +1,4 @@
+// src/pages/Waitlist.js
 import React, { useState, useEffect } from "react";
 import "./Waitlist.css";
 
@@ -19,9 +20,7 @@ const Waitlist = ({ onClose }) => {
     try {
       await fetch("https://script.google.com/macros/s/AKfycbyXoUiuyK34yXn7dqpAJlMkFBsPXw51fpaEBpRwaeqmwNuTEcsK-zKroVCZ8iah6vI/exec", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        mode: "no-cors",
         body: JSON.stringify(formData),
       });
 
@@ -91,6 +90,7 @@ const Waitlist = ({ onClose }) => {
 };
 
 export default Waitlist;
+
 
 
 
