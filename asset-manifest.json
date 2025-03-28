@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/whiffgone/static/css/main.1d70d745.css",
+    "main.js": "/whiffgone/static/js/main.2220e8b0.js",
+    "index.html": "/whiffgone/index.html",
+    "main.1d70d745.css.map": "/whiffgone/static/css/main.1d70d745.css.map",
+    "main.2220e8b0.js.map": "/whiffgone/static/js/main.2220e8b0.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1d70d745.css",
+    "static/js/main.2220e8b0.js"
+  ]
+}
