@@ -1,4 +1,3 @@
-// src/pages/Waitlist.js
 import React, { useState, useEffect } from "react";
 import "./Waitlist.css";
 
@@ -17,19 +16,19 @@ const Waitlist = ({ onClose }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    await fetch(
-      "https://script.google.com/macros/s/AKfycbyXoUiuyK34yXn7dqpAJlMkFBsPXw51fpaEBpRwaeqmwNuTEcsK-zKroVCZ8iah6vI/exec",
-      {
+    try {
+      await fetch("https://script.google.com/macros/s/AKfycbyXoUiuyK34yXn7dqpAJlMkFBsPXw51fpaEBpRwaeqmwNuTEcsK-zKroVCZ8iah6vI/exec", {
         method: "POST",
-        mode: "no-cors", // ❗️ Mutlaka olmalı!
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
-      }
-    );
+      });
 
-    setSubmitted(true);
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission failed:", error);
+    }
   };
 
   useEffect(() => {
@@ -92,6 +91,7 @@ const Waitlist = ({ onClose }) => {
 };
 
 export default Waitlist;
+
 
 
 
