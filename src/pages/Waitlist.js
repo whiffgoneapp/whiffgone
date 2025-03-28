@@ -19,6 +19,7 @@ const Waitlist = ({ onClose }) => {
     try {
       await fetch("https://script.google.com/macros/s/AKfycbyXoUiuyK34yXn7dqpAJlMkFBsPXw51fpaEBpRwaeqmwNuTEcsK-zKroVCZ8iah6vI/exec", {
         method: "POST",
+        mode: "no-cors", // 👈 Bu satır mutlaka olmalı!
         headers: {
           "Content-Type": "application/json",
         },
@@ -91,6 +92,7 @@ const Waitlist = ({ onClose }) => {
 };
 
 export default Waitlist;
+
 
 
 
